@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package api;
+
+// 请求体
+message HelloRequest {
+  string message = 1;
+}
+
+// 响应体
+message HelloResponse {
+  string message = 2;
+}
+
+// rpc
+service HelloService {
+    rpc sayHello(HelloRequest) returns (HelloResponse);
+}
